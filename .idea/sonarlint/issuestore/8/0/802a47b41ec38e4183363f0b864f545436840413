@@ -1,0 +1,17 @@
+
+Z	php:S1131-"@Remove the useless trailing whitespaces at the end of this line.(ÒÌâ–øÿÿÿÿ
+dphp:S103("KSplit this 131 characters long line (which is greater than 120 authorized).(íàú·ûÿÿÿÿ
+dphp:S103F"KSplit this 170 characters long line (which is greater than 120 authorized).(Ì¨•şÿÿÿÿ
+dphp:S103G"KSplit this 182 characters long line (which is greater than 120 authorized).(ø·û¯øÿÿÿÿ
+^	php:S1784""DExplicitly mention the visibility of this constructor "__construct".(Šııûÿÿÿÿ
+3php:S113"'Add a new line at the end of this file.
+i	php:S3776,"TRefactor this function to reduce its Cognitive Complexity from 89 to the 15 allowed.(™Ê•×
+C	php:S1481P".Remove this unused "$old_meta" local variable.(‚³§¾
+C	php:S1481d".Remove this unused "$new_meta" local variable.(¢ƒô˜
+K	php:S1481·"0Remove this unused "$newTownsId" local variable.(áØÄµøÿÿÿÿ
+D	php:S1481¼")Remove this unused "$del" local variable.(°ı¸“üÿÿÿÿ
+I	php:S1066C"/Merge this if statement with the enclosing one.(ì¸«Äøÿÿÿÿ
+W	php:S1793„"<Replace this "else if" keyword sequence by "elseif" keyword.(ƒ©Çõÿÿÿÿÿ
+3php:S125%"Remove this commented out code.(í‡Áå
+O	php:S1788,":Move arguments "$id" after arguments without default value(™Ê•×
+Iphp:S1219"0Add curly braces around the nested statement(s).(ë“ƒ¦ûÿÿÿÿ

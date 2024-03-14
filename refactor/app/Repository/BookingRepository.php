@@ -429,6 +429,8 @@ class BookingRepository extends BaseRepository
             'session_time' => $session_time,
             'for_text'     => 'lön'
         ];
+        
+        // mailer should have its own service 
         $mailer = new AppMailer();
         $mailer->send($email, $name, $subject, 'emails.session-ended', $data);
 
@@ -447,6 +449,8 @@ class BookingRepository extends BaseRepository
         $user_meta = UserMeta::where('user_id', $user_id)->first();
         $translator_type = $user_meta->translator_type;
         $job_type = 'unpaid';
+        
+        // could be replaces with case
         if ($translator_type == 'professional')
             $job_type = 'paid';   /*show all jobs for professionals.*/
         else if ($translator_type == 'rwstranslator')
@@ -459,6 +463,9 @@ class BookingRepository extends BaseRepository
         $gender = $user_meta->gender;
         $translator_level = $user_meta->translator_level;
         $job_ids = Job::getJobs($user_id, $job_type, 'pending', $userlanguage, $gender, $translator_level);
+        
+        // the block down here is really bad,
+        //we need to find a way to move our code away from using loops and try to use SQL as much as possible
         foreach ($job_ids as $k => $v)     // checking translator town
         {
             $job = Job::find($v->id);

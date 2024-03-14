@@ -1,44 +1,21 @@
-Do at least ONE of the following tasks: refactor is mandatory. Write tests is optional, will be good bonus to see it. 
-Upload your results to a Github repo, for easier sharing and reviewing.
+My thoughts on improvement for BookingController
 
-Thank you and good luck!
+- Some methods in the controller seem to handle multiple aspects of booking management. For example, distanceFeed updates distance/time, but also modifies admin comments, flags, and other fields. Ideally, these might be separated for better organization and maintainability.
+- While the controller handles various actions, it's unclear if there's robust input validation. Its a good practice to always validate and sanitize user-provided data before proceeding with database interactions.
+- Some inconsistencies exist in naming conventions (camelCase vs. snake_case)
+- Methods like acceptJob and acceptJobWithId seem quite similar. I think they could be consolidated.
 
+In the bookingController I have updated the one method only for now i.e
+- distanceFeed => into two methods updateDistanceAndTime() and updateBookingStatus()
+- I have not updated the corresponding repository for them but they should be simple
 
-
-Code to refactor
-=================
-1) app/Http/Controllers/BookingController.php
-2) app/Repository/BookingRepository.php
-
-Code to write tests (optional)
-=====================
-3) App/Helpers/TeHelper.php method willExpireAt
-4) App/Repository/UserRepository.php, method createOrUpdate
-
-
-----------------------------
-
-What I expect in your repo:
-
-X. A readme with:   Your thoughts about the code. What makes it amazing code. Or what makes it ok code. Or what makes it terrible code. How would you have done it. Thoughts on formatting, structure, logic.. The more details that you can provide about the code (what's terrible about it or/and what is good about it) the easier for us to assess your coding style, mentality etc
-
-And 
-
-Y.  Refactor it if you feel it needs refactoring. The more love you put into it. The easier for us to asses your thoughts, code principles etc
+For BookingRepository I have same concerns as well
+- Fat Methods
+- if its laravel then we could have used magic methods or bulk update at many places
+- We should have separate class for mailer and use if instead of initialing and using mailer again and again
+- could have used CASE in place of IF - ELSE IFs
+- Calling a model in loop could lead to performance issues
+- Hard to understand we have some columns having string for condition like $job->certified == 'yes' certified should be boolean
 
 
-IMPORTANT: Make two commits. First commit with original code. Second with your refactor so we can easily trace changes. 
-
-
-NB: you do not need to set up the code on local and make the web app run. It will not run as its not a complete web app. This is purely to assess you thoughts about code, formatting, logic etc
-
-
-===== So expected output is a GitHub link with either =====
-
-1. Readme described above (point X above) + refactored code 
-OR
-2. Readme described above (point X above) + refactored core + a unit test of the code that we have sent
-
-Thank you!
-
-
+overall, there are many things that could be changes or updated here but depends on the scope and data we have.

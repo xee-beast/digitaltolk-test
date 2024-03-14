@@ -1,0 +1,5 @@
+
+_php:S103+"KSplit this 153 characters long line (which is greater than 120 authorized).(¢ßÁš
+E	php:S1481»"*Remove this unused "$data" local variable.(±Äışÿÿÿÿ
+K	php:S1481`"6Remove this unused "$adminSenderEmail" local variable.(Ñõ¡«
+C	php:S1481ğ".Remove this unused "$job_data" local variable.(ò©ñ]
